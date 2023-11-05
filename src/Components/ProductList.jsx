@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-// import "./App.css";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -11,7 +10,6 @@ const ProductList = () => {
       if (!response.ok) throw new Error(response.statusText);
       const data = await response.json();
       setProducts(data);
-      console.log(data);
     } catch (error) {
       console.error("Error fetching products:", error);
       // Handle any errors that occur during the data fetching process
