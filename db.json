@@ -2,70 +2,70 @@
     "products": [
       {
         "id": 1,
-        "image": "public/images/Saving.jpg",
+        "image": "images/Saving.jpg",
         "name": "Product 1 Name",
         "price": "$100.00",
         "description": "Product 1 Description"
       },
       {
         "id": 2,
-        "image": "public/images/Simplicity.jpg",
+        "image": "images/Simplicity.jpg",
         "name": "Product 2 Name",
         "price": "$200.00",
         "description": "Product 2 Description"
       },
       {
         "id": 3,
-        "image": "public/images/red-sit.jpg",
+        "image": "images/red-sit.jpg",
         "name": "Product 3 Name",
         "price": "$300.00",
         "description": "Product 3 Description"
       },
       {
         "id": 4,
-        "image": "public/images/Popular.jpg",
+        "image": "images/Popular.jpg",
         "name": "Product 4 Name",
         "price": "$400.00",
         "description": "Product 4 Description"
       },
       {
         "id": 5,
-        "image": "public/images/Online.jpg",
+        "image": "images/Online.jpg",
         "name": "Product 5 Name",
         "price": "$500.00",
         "description": "Product 5 Description"
       },
       {
         "id": 6,
-        "image": "public/images/Empowerment.jpg",
+        "image": "images/Empowerment.jpg",
         "name": "Product 6 Name",
         "price": "$600.00",
         "description": "Product 6 Description"
       },
       {
         "id": 7,
-        "image": "public/images/Diversity.jpg",
+        "image": "images/Diversity.jpg",
         "name": "Product 7 Name",
         "price": "$700.00",
         "description": "Product 7 Description"
       },
       {
         "id": 8,
-        "image": "public/images/Create.jpg",
+        "image": "images/Create.jpg",
         "name": "Product 8 Name",
         "price": "$800.00",
         "description": "Product 8 Description"
       },
       {
         "id": 9,
-        "image": "public/images/Access.jpg",
+        "image": "images/Access.jpg",
         "name": "Product 9 Name",
         "price": "$900.00",
         "description": "Product 9 Description"
       },
       {
         "id": 10,
-        "image": "public/images/Saving.jpg",
+        "image": "images/Saving.jpg",
         "name": "Product 10 Name",
         "price": "$1000.00",
         "description": "Product 10 Description"
