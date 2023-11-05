@@ -5,8 +5,8 @@ import ProductList from "../Components/ProductList";
 const Landing = () => {
   return (
     <>
-      <HeroSection />
-      <ProductList />
+    <HeroSection />
+    <ProductList />
     </>
   );
 };

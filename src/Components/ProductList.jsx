@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const ProductList = () => {
@@ -32,6 +33,9 @@ const ProductList = () => {
                   <h4 className="productlist-h4">{product.name}</h4>
                   <p>{product.price}</p>
                   <p>{product.description}</p>
+                  <Link to={`/${product.id}`} className="btn btn-primary">
+                    View Details
+                  </Link>
                 </div>
               </div>
             </div>

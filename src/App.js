@@ -1,13 +1,19 @@
 import './App.css';
-import Landing from './Pages/Landing';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './Components/Header';
+import Landing from './Pages/Landing';
+import Product from './Components/Product';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Landing />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Header />}>
+        <Route index element={<Landing />} />
+        <Route path='/:id' element={<Product />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
