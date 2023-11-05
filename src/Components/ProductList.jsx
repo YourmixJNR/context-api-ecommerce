@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+// import "./App.css";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -22,15 +23,23 @@ const ProductList = () => {
   }, []);
 
   return (
-    <div>
-      {products.map((product, index) => (
-        <div key={index}>
-          <img src={product.image} alt="Product Image" />
-          <h4>{product.name}</h4>
-          <p>{product.price}</p>
-          <p>{product.description}</p>
+    <div className="album py-5 bg-body-tertiary">
+      <div className="container">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          {products.map((product, index) => (
+            <div className="col" key={index}>
+              <div className="card shadow-sm">
+                <img src={product.image} alt="Product Image" />
+                <div className="card-body">
+                  <h4 className="productlist-h4">{product.name}</h4>
+                  <p>{product.price}</p>
+                  <p>{product.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 };

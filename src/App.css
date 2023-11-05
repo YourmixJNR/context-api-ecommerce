@@ -10,3 +10,9 @@
   color: #fff;
   font-weight: 600;
 }
+
+/* ProductList */
+
+.productlist-h4 {
+  color: #202020 !important;
+}
