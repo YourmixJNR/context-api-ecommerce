@@ -32,6 +32,7 @@ const Product = () => {
             <h4 className="product-4">{product.name}</h4>
             <p>{product.price}</p>
             <p>{product.description}</p>
+            <button className="btn btn-primary mb-5">Add to Cart</button>
           </div>
         </div>
       </div>
