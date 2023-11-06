@@ -1,9 +1,12 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
+import CartContext from "../Context/CartContext";
 
 const Product = () => {
   const { id } = useParams();
+
+  const { addToCart } = useContext(CartContext)
 
   const [product, setProduct] = useState({});
 
@@ -23,6 +26,11 @@ const Product = () => {
     FetchProduct();
   }, []);
 
+  const handleAddToCart = (product) => {
+    addToCart(product)
+    alert('Items Add To Cart')
+  }
+
   return (
     <div key={product.id} className="container">
       <div className="row justify-content-center">
@@ -32,7 +40,11 @@ const Product = () => {
             <h4 className="product-4">{product.name}</h4>
             <p>{product.price}</p>
             <p>{product.description}</p>
-            <button className="btn btn-primary mb-5">Add to Cart</button>
+            <button
+              className="btn btn-primary mb-5"
+              onClick={handleAddToCart}>
+              Add to Cart
+              </button>
           </div>
         </div>
       </div>
