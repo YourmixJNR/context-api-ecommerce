@@ -1,9 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import CartContext from "../Context/CartContext";
-import Product from "./Product";
 
-const CartProvider = () => {
+const CartProvider = ({children}) => {
   const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
@@ -28,8 +27,8 @@ const CartProvider = () => {
   return (
     <CartContext.Provider value={{ cart, addToCart, removeItem }}>
         {/* children components */}
-        {/* {children} */}
-        <Product />
+        {children}
+        {/* <Product /> */}
     </CartContext.Provider>
   )
 };

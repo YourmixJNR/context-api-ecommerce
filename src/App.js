@@ -1,19 +1,24 @@
-import './App.css';
+import React from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './Components/Header';
 import Landing from './Pages/Landing';
 import Product from './Components/Product';
+import Cart from "./Components/Cart";
+import CartProvider from "./Components/CartProvider";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Header />}>
-        <Route index element={<Landing />} />
-        <Route path='/:id' element={<Product />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Header />}>
+            <Route index element={<Landing />} />
+            <Route path='/:id' element={<Product />} />
+            <Route path="/cart" element={<Cart />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

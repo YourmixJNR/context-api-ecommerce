@@ -26,10 +26,17 @@ const Product = () => {
     FetchProduct();
   }, []);
 
-  const handleAddToCart = (product) => {
-    addToCart(product)
-    alert('Items Add To Cart')
-  }
+  const handleAddToCart = () => {
+    const productToAdd = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      description: product.description,
+    };
+    addToCart(productToAdd);
+    alert('Item added to Cart');
+  };  
 
   return (
     <div key={product.id} className="container">
