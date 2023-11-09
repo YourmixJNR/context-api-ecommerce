@@ -27,14 +27,14 @@ const Product = () => {
   }, []);
 
   const handleAddToCart = () => {
-    const productToAdd = {
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      image: product.image,
-      description: product.description,
-    };
-    addToCart(productToAdd);
+    // const productToAdd = {
+    //   id: product.id,
+    //   name: product.name,
+    //   price: product.price,
+    //   image: product.image,
+    //   description: product.description,
+    // };
+    addToCart();
     alert('Item added to Cart');
   };  
 
