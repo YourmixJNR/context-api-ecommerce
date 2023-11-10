@@ -37,7 +37,6 @@ const Product = () => {
       image: product.image,
       description: product.description,
     };
-    console.log("Adding to cart:", productToAdd);
     addToCart(productToAdd);
     alert('Item added to Cart');
   };
