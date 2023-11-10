@@ -3,13 +3,12 @@ import CartContext from "../Context/CartContext";
 
 const Cart = () => {
   const { cart, removeItem } = useContext(CartContext);
+  console.log("Cart in Cart component:", cart);
 
   return (
     <div className="cart-container">
       <h2>Your Cart</h2>
-      {cart.length === 0 ? (
-        <p>Your cart is empty.</p>
-      ) : (
+      
         <ul>
           {cart.map((item) => (
             <li key={item.id}>
@@ -24,7 +23,7 @@ const Cart = () => {
             </li>
           ))}
         </ul>
-      )}
+      
     </div>
   );
 };

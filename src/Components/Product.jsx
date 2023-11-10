@@ -2,11 +2,12 @@ import React from "react";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import CartContext from "../Context/CartContext";
+import { Link } from "react-router-dom";
 
 const Product = () => {
   const { id } = useParams();
 
-  const { addToCart } = useContext(CartContext)
+  const { cart, addToCart } = useContext(CartContext)
 
   const [product, setProduct] = useState({});
 
@@ -26,17 +27,21 @@ const Product = () => {
     FetchProduct();
   }, []);
 
+  console.log("Cart in Cart component:", cart);
+
   const handleAddToCart = () => {
-    // const productToAdd = {
-    //   id: product.id,
-    //   name: product.name,
-    //   price: product.price,
-    //   image: product.image,
-    //   description: product.description,
-    // };
-    addToCart();
+    const productToAdd = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      description: product.description,
+    };
+    console.log("Adding to cart:", productToAdd);
+    addToCart(productToAdd);
     alert('Item added to Cart');
-  };  
+  };
+  
 
   return (
     <div key={product.id} className="container">
