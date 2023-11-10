@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import CartContext from "../Context/CartContext";
-import { Link } from "react-router-dom";
 
 const Product = () => {
   const { id } = useParams();

@@ -3,7 +3,6 @@ import CartContext from "../Context/CartContext";
 
 const Cart = () => {
   const { cart, removeItem } = useContext(CartContext);
-  console.log("Cart in Cart component:", cart);
 
   return (
     <div className="cart-container">
