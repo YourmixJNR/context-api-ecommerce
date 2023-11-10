@@ -7,7 +7,6 @@ const Cart = () => {
   return (
     <div className="cart-container">
       <h2>Your Cart</h2>
-
       <ul>
         {cart.map((item) => (
           <li key={item.id}>
