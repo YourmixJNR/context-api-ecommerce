@@ -7,22 +7,21 @@ const Cart = () => {
   return (
     <div className="cart-container">
       <h2>Your Cart</h2>
-      
-        <ul>
-          {cart.map((item) => (
-            <li key={item.id}>
-              <div className="cart-item">
-                <img src={item.image} alt={item.name} />
-                <div>
-                  <h3>{item.name}</h3>
-                  <p>{item.price}</p>
-                  <button onClick={() => removeItem(item.id)}>Remove</button>
-                </div>
+
+      <ul>
+        {cart.map((item) => (
+          <li key={item.id}>
+            <div className="cart-item">
+              <img src={item.image} alt={item.name} />
+              <div>
+                <h3>{item.name}</h3>
+                <p>{item.price}</p>
+                <button onClick={() => removeItem(item.id)}>Remove</button>
               </div>
-            </li>
-          ))}
-        </ul>
-      
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

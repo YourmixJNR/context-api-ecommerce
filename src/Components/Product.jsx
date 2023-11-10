@@ -6,7 +6,7 @@ import CartContext from "../Context/CartContext";
 const Product = () => {
   const { id } = useParams();
 
-  const { cart, addToCart } = useContext(CartContext)
+  const { cart, addToCart } = useContext(CartContext);
 
   const [product, setProduct] = useState({});
 
@@ -37,9 +37,8 @@ const Product = () => {
       description: product.description,
     };
     addToCart(productToAdd);
-    alert('Item added to Cart');
+    alert("Item added to Cart");
   };
-  
 
   return (
     <div key={product.id} className="container">
@@ -50,11 +49,9 @@ const Product = () => {
             <h4 className="product-4">{product.name}</h4>
             <p>{product.price}</p>
             <p>{product.description}</p>
-            <button
-              className="btn btn-primary mb-5"
-              onClick={handleAddToCart}>
+            <button className="btn btn-primary mb-5" onClick={handleAddToCart}>
               Add to Cart
-              </button>
+            </button>
           </div>
         </div>
       </div>
