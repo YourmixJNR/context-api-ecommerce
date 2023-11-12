@@ -3,7 +3,24 @@
 /* Header */
 
 .container {
-  justify-content: center !important;
+  justify-content: space-between !important;
+}
+
+.custom-link {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  gap: 5px;
+  margin-right: 0 !important;
+  font-size: .9rem;
+  text-decoration: none !important;
+}
+
+.cart-count {
+  font-size: 13px;
+  padding: 2px 8px;
+  border-radius: 50px;
+  background: #f1f0ee;
 }
 
 .container h4 {
@@ -24,3 +41,4 @@
 .product-4{
   color: #202020 !important;
 }
+
