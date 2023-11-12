@@ -27,14 +27,7 @@ const Product = () => {
   }, []);
 
   const handleAddToCart = () => {
-    const productToAdd = {
-      id: product.id,
-      name: product.name,
-      price: product.price,
-      image: product.image,
-      description: product.description,
-    };
-    addToCart(productToAdd);
+    addToCart(product);
     alert("Item added to Cart");
   };
 
