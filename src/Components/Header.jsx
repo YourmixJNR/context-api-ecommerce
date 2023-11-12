@@ -26,7 +26,10 @@ const Header = () => {
           </div>
           <div>
             <Link to="/cart" className="custom-link">
-              <img src="/cart-icon.png" alt="" />
+              <img
+                src="/cart-icon.png"
+                alt="" 
+              />
               <span>Cart</span>
               <span className="cart-count">{cartNumber}</span>
             </Link>
