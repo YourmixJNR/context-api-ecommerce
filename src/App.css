@@ -45,6 +45,11 @@
 
 /* Cart Page */
 
+.breadcrumb {
+  margin: 20px 0;
+  gap: 10px;
+}
+
 .img-cart {
   display: block;
   max-width: 50px;
@@ -71,6 +76,6 @@ table tr th {
   vertical-align: middle;
 }
 
-.table-responsive{
+.table-responsive {
   overflow: unset !important;
 }
