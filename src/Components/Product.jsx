@@ -43,9 +43,6 @@ const Product = () => {
             <button className="btn btn-primary mb-5" onClick={handleAddToCart}>
               Add to Cart
             </button>
-            <button>
-              <Link to="/cart">View Cart</Link>
-            </button>
           </div>
         </div>
       </div>
