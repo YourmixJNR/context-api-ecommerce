@@ -6,6 +6,13 @@ import "../App.css";
 const Cart = () => {
   const { cart, updateQuantity, removeItem } = useContext(CartContext);
 
+  const handleChange = (e, item) => {
+    const newQuantity = parseInt(e.target.value, 10);
+    if (!isNaN(newQuantity) && newQuantity > 0) {
+      updateQuantity(item.id, newQuantity);
+    }
+ };
+ 
   const handleDelete = (itemId) => {
     removeItem(itemId);
   };
@@ -64,15 +71,7 @@ const Cart = () => {
                                 className="form-control"
                                 type="number"
                                 value={item.quantity}
-                                onChange={(e) => {
-                                  const newQuantity = parseInt(
-                                    e.target.value,
-                                    10
-                                  );
-                                  if (!isNaN(newQuantity) && newQuantity > 0) {
-                                    updateQuantity(item.id, newQuantity);
-                                  }
-                                }}
+                                onChange={(e) => handleChange(e, item)}
                               />
                               <button rel="tooltip" className="btn btn-default">
                                 <i className="fa fa-pencil" />
@@ -87,8 +86,8 @@ const Cart = () => {
                               </span>
                             </div>
                           </td>
-                          <td>{item.price}</td>
-                          <td>$54.00</td>
+                          <td>${item.price}</td>
+                          <td>${item.quantity * item.price}</td>
                         </tr>
                       ))}
                     </tbody>
