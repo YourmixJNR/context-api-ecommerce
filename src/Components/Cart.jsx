@@ -6,7 +6,9 @@ import "../App.css";
 const Cart = () => {
   const { cart, removeItem } = useContext(CartContext);
 
-  const [quantityValue, setQuantityValue] = useState();
+  const handleDelete = (itemId) => {
+    removeItem(itemId)
+  }
 
   return (
     <div className="container bootstrap snippets bootdey">
@@ -61,10 +63,7 @@ const Cart = () => {
                               <input
                                 className="form-control"
                                 type="number"
-                                value={quantityValue}
-                                onChange={(e) => {
-                                  setQuantityValue(e.target.value);
-                                }}  
+                                value={item.quantity} 
                               />
                               <button rel="tooltip" className="btn btn-default">
                                 <i className="fa fa-pencil" />
@@ -72,7 +71,7 @@ const Cart = () => {
                               <span
                                className="btn btn-primary"
                                onClick={() => {
-                                removeItem(item.id)
+                                handleDelete(item.id)
                                }}>
                               <i className="fa fa-trash-o"></i>
                               </span>
