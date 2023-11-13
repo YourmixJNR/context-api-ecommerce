@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import CartContext from "../Context/CartContext";
 
 const Product = () => {
@@ -40,7 +40,9 @@ const Product = () => {
             <h4 className="product-4">{product.name}</h4>
             <p>{product.price}</p>
             <p>{product.description}</p>
-            <button className="btn btn-primary mb-5" onClick={handleAddToCart}>
+            <button 
+              className="btn btn-primary mb-5" 
+              onClick={handleAddToCart}>
               Add to Cart
             </button>
           </div>
