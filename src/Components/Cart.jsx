@@ -64,9 +64,13 @@ const Cart = () => {
                               <button rel="tooltip" className="btn btn-default">
                                 <i className="fa fa-pencil" />
                               </button>
-                              <a href="#" className="btn btn-primary">
-                                <i className="fa fa-trash-o"></i>
-                              </a>
+                              <span
+                               className="btn btn-primary"
+                               onClick={() => {
+                                removeItem(item.id)
+                               }}>
+                              <i className="fa fa-trash-o"></i>
+                              </span>
                             </form>
                           </td>
                           <td>{item.price}</td>
