@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import CartContext from "../Context/CartContext";
 import { Link } from "react-router-dom";
 import "../App.css";
 
 const Cart = () => {
   const { cart, removeItem } = useContext(CartContext);
+
+  const [quantityValue, setQuantityValue] = useState();
 
   return (
     <div className="container bootstrap snippets bootdey">
@@ -58,8 +60,11 @@ const Cart = () => {
                             <form className="form-inline">
                               <input
                                 className="form-control"
-                                type="text"
-                                value="1"
+                                type="number"
+                                value={quantityValue}
+                                onChange={(e) => {
+                                  setQuantityValue(e.target.value);
+                                }}  
                               />
                               <button rel="tooltip" className="btn btn-default">
                                 <i className="fa fa-pencil" />
