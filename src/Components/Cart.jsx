@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import "../App.css";
 
 const Cart = () => {
-  const { cart, removeItem } = useContext(CartContext);
+  const { cart, updateQuantity, removeItem } = useContext(CartContext);
 
   const handleDelete = (itemId) => {
-    removeItem(itemId)
-  }
+    removeItem(itemId);
+  };
 
   return (
     <div className="container bootstrap snippets bootdey">
@@ -59,23 +59,33 @@ const Cart = () => {
                             <p>Size: {item.size}</p>
                           </td>
                           <td>
-                            <form className="form-inline">
+                            <div className="form-inline">
                               <input
                                 className="form-control"
                                 type="number"
-                                value={item.quantity} 
+                                value={item.quantity}
+                                onChange={(e) => {
+                                  const newQuantity = parseInt(
+                                    e.target.value,
+                                    10
+                                  );
+                                  if (!isNaN(newQuantity) && newQuantity > 0) {
+                                    updateQuantity(item.id, newQuantity);
+                                  }
+                                }}
                               />
                               <button rel="tooltip" className="btn btn-default">
                                 <i className="fa fa-pencil" />
                               </button>
                               <span
-                               className="btn btn-primary"
-                               onClick={() => {
-                                handleDelete(item.id)
-                               }}>
-                              <i className="fa fa-trash-o"></i>
+                                className="btn btn-primary"
+                                onClick={() => {
+                                  handleDelete(item.id);
+                                }}
+                              >
+                                <i className="fa fa-trash-o"></i>
                               </span>
-                            </form>
+                            </div>
                           </td>
                           <td>{item.price}</td>
                           <td>$54.00</td>
