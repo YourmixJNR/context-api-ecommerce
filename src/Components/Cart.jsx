@@ -52,7 +52,7 @@ const Cart = () => {
                           </td>
                           <td>
                             <strong>{item.name}</strong>
-                            <p>{item.size}</p>
+                            <p>Size: {item.size}</p>
                           </td>
                           <td>
                             <form className="form-inline">
