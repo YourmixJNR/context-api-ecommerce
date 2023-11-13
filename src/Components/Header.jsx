@@ -20,8 +20,8 @@ const Header = () => {
       <div className="navbar navbar-dark bg-dark shadow-sm">
         <div className="container">
           <div>
-            <Link to="/">
-              <h4>Welcome to Our Store</h4>
+            <Link to="/" style={{textDecoration: 'none'}}>
+              <h4>Our Store</h4>
             </Link>
           </div>
           <div>
