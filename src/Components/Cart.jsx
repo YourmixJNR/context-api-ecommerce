@@ -124,7 +124,7 @@ const Cart = () => {
               </div>
             </div>
             {cart.length > 0 && (
-              <>
+              <div style={{marginBottom : '20px' }}>
                 <Link to="/" className="btn btn-success">
                   <span className="glyphicon glyphicon-arrow-left"></span>
                   &nbsp;Continue Shopping
@@ -133,7 +133,7 @@ const Cart = () => {
                   Next
                   <span className="glyphicon glyphicon-chevron-right"></span>
                 </Link>
-              </>
+              </div>
             )}
           </div>
         </div>
