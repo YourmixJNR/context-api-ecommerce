@@ -2,6 +2,7 @@ import React, { useRef, useContext } from "react";
 import CartContext from "../Context/CartContext";
 import { Link } from "react-router-dom";
 import "../App.css";
+import CartTotal from "./CartTotal";
 
 const Cart = () => {
   const { cart, updateQuantity, removeItem } = useContext(CartContext);
@@ -100,6 +101,7 @@ const Cart = () => {
                           <td>${item.quantity * item.price}</td>
                         </tr>
                       ))}
+                      <CartTotal cart={cart} />
                     </tbody>
                   </table>
                 </div>
