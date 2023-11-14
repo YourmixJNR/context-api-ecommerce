@@ -24,7 +24,7 @@ const Product = () => {
 
   useEffect(() => {
     FetchProduct();
-  }, []);
+  }, [id]);
 
   const handleAddToCart = () => {
     addToCart(product);
