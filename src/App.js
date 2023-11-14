@@ -4,6 +4,7 @@ import Header from './Components/Header';
 import Landing from './Pages/Landing';
 import Product from './Components/Product';
 import Cart from "./Components/Cart";
+import Checkout from "./Components/Checkout";
 import CartProvider from "./Components/CartProvider";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Route index element={<Landing />} />
             <Route path='/:id' element={<Product />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Route>
         </Routes>
       </BrowserRouter>

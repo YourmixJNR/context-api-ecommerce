@@ -129,7 +129,7 @@ const Cart = () => {
                   <span className="glyphicon glyphicon-arrow-left"></span>
                   &nbsp;Continue Shopping
                 </Link>
-                <Link to="#" className="btn btn-primary pull-right">
+                <Link to="/checkout" className="btn btn-primary pull-right">
                   Next
                   <span className="glyphicon glyphicon-chevron-right"></span>
                 </Link>
