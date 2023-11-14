@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useRef, useContext } from "react";
 import CartContext from "../Context/CartContext";
 import { Link } from "react-router-dom";
 import "../App.css";
@@ -11,8 +11,14 @@ const Cart = () => {
     if (!isNaN(newQuantity) && newQuantity > 0) {
       updateQuantity(item.id, newQuantity);
     }
- };
- 
+  };
+
+  const inputRefs = useRef({});
+
+  const focusInput = (itemId) => {
+    inputRefs.current[itemId].focus();
+  };  
+
   const handleDelete = (itemId) => {
     removeItem(itemId);
   };
@@ -70,11 +76,15 @@ const Cart = () => {
                               <input
                                 className="form-control"
                                 type="number"
+                                ref={(el) => (inputRefs.current[item.id] = el)}
                                 value={item.quantity}
                                 onChange={(e) => handleChange(e, item)}
                               />
-                              <button rel="tooltip" className="btn btn-default">
-                                <i className="fa fa-pencil" />
+                              <button 
+                                rel="tooltip" 
+                                className="btn btn-default"
+                                onClick={() => focusInput(item.id)}>
+                              <i className="fa fa-pencil" />
                               </button>
                               <span
                                 className="btn btn-primary"

@@ -29,16 +29,13 @@ const CartProvider = ({ children }) => {
   };
 
   const removeItem = (id) => {
-    setCart((prevCart) => prevCart.filter((item) => {
-      if (item.id === id) {
-        return item.quantity > 10 ? { ...item, quantity: item.quantity - 1 } : null;
-      }
-      return true;
-    }));
-  };  
+    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+  };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, updateQuantity, removeItem }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, updateQuantity, removeItem }}
+    >
       {children}
     </CartContext.Provider>
   );

@@ -31,7 +31,7 @@ const ProductList = () => {
                 <img src={product.image} alt="Product Image" />
                 <div className="card-body">
                   <h4 className="productlist-h4">{product.name}</h4>
-                  <p>{product.price}</p>
+                  <p>${product.price}</p>
                   <p>{product.description}</p>
                   <Link to={`/${product.id}`} className="btn btn-primary">
                     View Details

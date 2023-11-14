@@ -38,7 +38,7 @@ const Product = () => {
           <div className="text-center mt-5">
             <img className="product-image" src={product.image} alt="" />
             <h4 className="product-4">{product.name}</h4>
-            <p>{product.price}</p>
+            <p>${product.price}</p>
             <p>{product.description}</p>
             <button 
               className="btn btn-primary mb-5" 
