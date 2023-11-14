@@ -7,7 +7,27 @@ const CartTotal = ({cart}) => {
 
   return (
     <>
-      
+      <tr>
+        <td colspan="6">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="4" className="text-right">
+          Total Product
+        </td>
+        <td>{total}</td>
+      </tr>
+      <tr>
+        <td colspan="4" className="text-right">
+          Total Shipping
+        </td>
+        <td>$2.00</td>
+      </tr>
+      <tr>
+        <td colspan="4" className="text-right">
+          <strong>Total</strong>
+        </td>
+        <td>{total * 2}</td>
+      </tr>
     </>
   );
 };
