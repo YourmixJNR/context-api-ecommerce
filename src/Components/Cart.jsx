@@ -18,7 +18,7 @@ const Cart = () => {
 
   const focusInput = (itemId) => {
     inputRefs.current[itemId].focus();
-  };  
+  };
 
   const handleDelete = (itemId) => {
     removeItem(itemId);
@@ -46,6 +46,7 @@ const Cart = () => {
                     className="img-circle img-thumbnail"
                     src="http://abbrefy.xyz/76bb2f3"
                     style={{ width: "100px" }}
+                    alt="User"
                   />
                   Michael Victor
                 </h3>
@@ -63,44 +64,59 @@ const Cart = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {cart.map((item) => (
-                        <tr key={item.id}>
-                          <td>
-                            <img src={item.image} className="img-cart" />
+                      {cart.length === 0 ? (
+                        <tr>
+                          <td colSpan="5">
+                            <h3> Your Cart Is Empty</h3>
                           </td>
-                          <td>
-                            <strong>{item.name}</strong>
-                            <p>Size: {item.size}</p>
-                          </td>
-                          <td>
-                            <div className="form-inline">
-                              <input
-                                className="form-control"
-                                type="number"
-                                ref={(el) => (inputRefs.current[item.id] = el)}
-                                value={item.quantity}
-                                onChange={(e) => handleChange(e, item)}
-                              />
-                              <button 
-                                rel="tooltip" 
-                                className="btn btn-default"
-                                onClick={() => focusInput(item.id)}>
-                              <i className="fa fa-pencil" />
-                              </button>
-                              <span
-                                className="btn btn-primary"
-                                onClick={() => {
-                                  handleDelete(item.id);
-                                }}
-                              >
-                                <i className="fa fa-trash-o"></i>
-                              </span>
-                            </div>
-                          </td>
-                          <td>${item.price}</td>
-                          <td>${item.quantity * item.price}</td>
                         </tr>
-                      ))}
+                      ) : (
+                        cart.map((item) => (
+                          <tr key={item.id}>
+                            <td>
+                              <img
+                                src={item.image}
+                                className="img-cart"
+                                alt={item.name}
+                              />
+                            </td>
+                            <td>
+                              <strong>{item.name}</strong>
+                              <p>Size: {item.size}</p>
+                            </td>
+                            <td>
+                              <div className="form-inline">
+                                <input
+                                  className="form-control"
+                                  type="number"
+                                  ref={(el) =>
+                                    (inputRefs.current[item.id] = el)
+                                  }
+                                  value={item.quantity}
+                                  onChange={(e) => handleChange(e, item)}
+                                />
+                                <button
+                                  rel="tooltip"
+                                  className="btn btn-default"
+                                  onClick={() => focusInput(item.id)}
+                                >
+                                  <i className="fa fa-pencil" />
+                                </button>
+                                <span
+                                  className="btn btn-primary"
+                                  onClick={() => {
+                                    handleDelete(item.id);
+                                  }}
+                                >
+                                  <i className="fa fa-trash-o"></i>
+                                </span>
+                              </div>
+                            </td>
+                            <td>${item.price}</td>
+                            <td>${item.quantity * item.price}</td>
+                          </tr>
+                        ))
+                      )}
                       <CartTotal cart={cart} />
                     </tbody>
                   </table>
