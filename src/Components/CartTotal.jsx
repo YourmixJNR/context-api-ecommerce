@@ -1,33 +1,37 @@
 import React from "react";
 
-const CartTotal = ({cart}) => {
+const CartTotal = ({ cart }) => {
   const total = cart.reduce((acc, item) => {
     return acc + item.price * item.quantity;
   }, 0);
 
   return (
     <>
-      <tr>
-        <td colspan="6">&nbsp;</td>
-      </tr>
-      <tr>
-        <td colspan="4" className="text-right">
-          Total Product
-        </td>
-        <td>{total}</td>
-      </tr>
-      <tr>
-        <td colspan="4" className="text-right">
-          Total Shipping
-        </td>
-        <td>$2.00</td>
-      </tr>
-      <tr>
-        <td colspan="4" className="text-right">
-          <strong>Total</strong>
-        </td>
-        <td>{total * 2}</td>
-      </tr>
+      {cart.length > 0 && (
+        <>
+          <tr>
+            <td colspan="6">&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="4" className="text-right">
+              Total Product
+            </td>
+            <td>{total}</td>
+          </tr>
+          <tr>
+            <td colspan="4" className="text-right">
+              Total Shipping
+            </td>
+            <td>$2.00</td>
+          </tr>
+          <tr>
+            <td colspan="4" className="text-right">
+              <strong>Total</strong>
+            </td>
+            <td>{total * 2}</td>
+          </tr>
+        </>
+      )}
     </>
   );
 };
