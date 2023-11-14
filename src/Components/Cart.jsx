@@ -123,6 +123,18 @@ const Cart = () => {
                 </div>
               </div>
             </div>
+            {cart.length > 0 && (
+              <>
+                <Link to="/" className="btn btn-success">
+                  <span className="glyphicon glyphicon-arrow-left"></span>
+                  &nbsp;Continue Shopping
+                </Link>
+                <Link to="#" className="btn btn-primary pull-right">
+                  Next
+                  <span className="glyphicon glyphicon-chevron-right"></span>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>
