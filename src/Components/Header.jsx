@@ -16,7 +16,7 @@ const Header = () => {
   }, [cart]);
 
   return (
-    <div data-bs-theme="dark">
+    <div>
       <div className="navbar navbar-dark bg-dark shadow-sm">
         <div className="container">
           <div>
