@@ -23,11 +23,6 @@
   background: #f1f0ee;
 }
 
-.container h4 {
-  color: #fff;
-  font-weight: 600;
-}
-
 /* Product */
 
 .product-image {
@@ -43,22 +38,9 @@
 
 .img-cart {
   display: block;
-  max-width: 50px;
+  max-width: 70px;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-table tr td {
-  border: 1px solid #FFFFFF !important;
-}
-
-table tr th {
-  background: #eee;
-}
-
-.panel-shadow {
-  box-shadow: rgba(0, 0, 0, 0.3) 7px 7px 7px;
+  margin: 0 auto;
 }
 
 .form-inline .form-control {
