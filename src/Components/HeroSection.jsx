@@ -1,6 +1,7 @@
 import React from "react";
 
 const HeroSection = () => {
+  
   return (
     <div>
       <section className="py-5 text-center container">

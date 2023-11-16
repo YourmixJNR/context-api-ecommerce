@@ -1,6 +1,19 @@
-import React from "react";
+import CartContext from "../Context/CartContext";
+import { useState, useEffect, useContext } from "react";
 
 const Checkout = () => {
+  const { cart } = useContext(CartContext);
+
+  const [cartNumber, setCartNumber] = useState(0);
+
+  useEffect(() => {
+    setCartNumber(cart.length);
+  }, [cart]);
+
+  const totalPrice = cart.reduce((acc, item) => {
+    return acc + item.price * item.quantity;
+  }, 0);
+
   return (
     <div className="container">
       <main>
@@ -11,33 +24,40 @@ const Checkout = () => {
             style={{ width: "200px" }}
             alt="User"
           />
-          <h2>Checkout Page</h2>
+          <h2>Finalize Your Order</h2>
           <p class="lead">
-            Below is an example form built entirely with Bootstrap’s form
-            controls. Each required form group has a validation state that can
-            be triggered by attempting to submit the form without completing it.
+            Please complete the following details to proceed with your purchase.
+            Ensure that all required information is provided for a smooth and
+            secure transaction. Review your items below before placing the
+            order. Thank you for choosing our store!
           </p>
         </div>
         <div className="row g-5">
           <div className="col-md-5 col-lg-4 order-md-last">
             <h4 className="d-flex justify-content-between align-items-center mb-3">
               <span className="text-primary">Your cart</span>
-              <span className="badge bg-primary rounded-pill">3</span>
+              <span className="badge bg-primary rounded-pill">
+                {cartNumber}
+              </span>
             </h4>
             <ul className="list-group mb-3">
-              <li className="list-group-item d-flex justify-content-between lh-sm">
-                <div>
-                  <h6 className="my-0">Product name</h6>
-                  <small className="text-body-secondary">
-                    Brief description
-                  </small>
-                </div>
-                <span className="text-body-secondary">$12</span>
-              </li>
-              {/* Other list items */}
+              {cart.map((item) => (
+                <li
+                  key={item.id}
+                  className="list-group-item d-flex justify-content-between lh-sm"
+                >
+                  <div>
+                    <h6 className="my-0">{item.name}</h6>
+                    <small className="text-body-secondary">
+                      {item.description}
+                    </small>
+                  </div>
+                  <span className="text-body-secondary">${item.price}</span>
+                </li>
+              ))}
               <li className="list-group-item d-flex justify-content-between">
                 <span>Total (USD)</span>
-                <strong>$20</strong>
+                <strong>{totalPrice * 2}</strong>
               </li>
             </ul>
 
@@ -338,13 +358,13 @@ const Checkout = () => {
         <p className="mb-1">© 2017–2023 Company Name</p>
         <ul className="list-inline">
           <li className="list-inline-item">
-            <a href="#">Privacy</a>
+            <p>Privacy</p>
           </li>
           <li className="list-inline-item">
-            <a href="#">Terms</a>
+            <p>Terms</p>
           </li>
           <li className="list-inline-item">
-            <a href="#">Support</a>
+            <p>Support</p>
           </li>
         </ul>
       </footer>
